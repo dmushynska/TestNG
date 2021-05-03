@@ -3,7 +3,9 @@
 
 class SortArray : public ArrayTransformer {
 public:
-    SortArray();
+    SortArray(const std::string &filename);
+    SortArray() = delete;
     ~SortArray() = default;
     void Operation() override;
+    void PrintSort();
 };

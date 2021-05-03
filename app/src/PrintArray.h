@@ -3,7 +3,8 @@
 #include "ArrayTransformer.h"
 class PrintArray : public ArrayTransformer {
 public:
-    PrintArray();
+    PrintArray(const std::string &filename);
+    PrintArray() = delete;
     ~PrintArray() = default;
     void Operation() override;
 };

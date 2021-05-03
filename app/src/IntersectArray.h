@@ -2,7 +2,7 @@
 #include "ArrayTransformer.h"
 
 template <typename It>
-std::vector<int> &Intersection(It begin1, It end1, It begin2, It end2) {
+std::vector<int> Intersection(It begin1, It end1, It begin2, It end2) {
     std::vector<int> result;
     while (begin1 != end1 && begin2 != end2) {
         if (*begin1 < *begin2) {
@@ -22,7 +22,8 @@ std::vector<int> &Intersection(It begin1, It end1, It begin2, It end2) {
 
 class IntersectArray : public ArrayTransformer {
 public:
-    IntersectArray();
+    IntersectArray(const std::string &filename);
+    IntersectArray() = delete;
     ~IntersectArray() = default;
     void Operation() override;
     std::vector<int> GetIntersectionOfTwoArray();

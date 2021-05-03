@@ -1,6 +1,6 @@
 #include "PrintArray.h"
 
-    PrintArray::PrintArray() : ArrayTransformer("") {}
+    PrintArray::PrintArray(const std::string &filename) : ArrayTransformer(filename) {}
 
     void PrintArray::Operation() {
         std::cout << "Array 1: ";

@@ -3,7 +3,8 @@
 
 class UniqueReversedArray : public ArrayTransformer {
 public:
-    UniqueReversedArray();
+    UniqueReversedArray(const std::string &filename);
+    UniqueReversedArray() = delete;
     ~UniqueReversedArray() = default;
     void Operation() override;
     std::vector<int> GetUniqueReservedArray();
