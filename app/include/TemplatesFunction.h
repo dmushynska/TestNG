@@ -1,11 +1,7 @@
 #pragma once
 #include <vector>
-#include <string>
 #include <iterator>
 #include <iostream>
-#include <fstream>
-#include <regex>
-
 template <typename RandomIt>
 void MergeSort(RandomIt range_begin, RandomIt range_end, bool reverse) {
     int range_length = range_end - range_begin;
@@ -32,17 +28,21 @@ void outputContainer(const Container& container) {
     std::cout << "\n";
 }
 
-class ArrayTransformer {
-public:
-    ArrayTransformer(const std::string &filename);
-    ArrayTransformer() = delete;
-    virtual ~ArrayTransformer() {}
-    virtual void Operation() = 0;
-private:
-protected:
-    std::vector<int> m_v1;
-    std::vector<int> m_v2;
-    std::vector<int> m_v3;
-};
-
-
+template <typename It>
+std::vector<int> Intersection(It begin1, It end1, It begin2, It end2) {
+    std::vector<int> result;
+    while (begin1 != end1 && begin2 != end2) {
+        if (*begin1 < *begin2) {
+            begin1++;
+        }
+        else if (*begin2 < *begin1) {
+            begin2++;
+        }
+        else {
+            result.push_back(*begin1);
+            begin1++;
+            begin2++;
+        }
+    }
+    return result;
+}
