@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "Algorithm.h"
+
 class ArrayTransformer {
 public:
     ArrayTransformer(const std::string &filename);

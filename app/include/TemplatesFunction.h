@@ -2,6 +2,8 @@
 #include <vector>
 #include <iterator>
 #include <iostream>
+
+// sorts array
 template <typename RandomIt>
 void MergeSort(RandomIt range_begin, RandomIt range_end, bool reverse) {
     int range_length = range_end - range_begin;
@@ -21,6 +23,7 @@ void MergeSort(RandomIt range_begin, RandomIt range_end, bool reverse) {
             });
 }
 
+// output of container through a spaces
 template <typename Container>
 void outputContainer(const Container& container) {
     std::ostream_iterator<typename Container::value_type> out_it(std::cout, " ");
@@ -28,6 +31,7 @@ void outputContainer(const Container& container) {
     std::cout << "\n";
 }
 
+// returns all intersection, works only with sorted arrays
 template <typename It>
 std::vector<int> Intersection(It begin1, It end1, It begin2, It end2) {
     std::vector<int> result;

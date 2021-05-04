@@ -1,5 +1,5 @@
 #include "IntersectArray.h"
-
+    // fills vectors (intersection of two bigger and all arrays)
     IntersectArray::IntersectArray(const std::string &filename) : ArrayTransformer(filename) {}
     void IntersectArray::Operation() {
         MergeSort(m_v1.begin(), m_v1.end(), false);
@@ -16,16 +16,20 @@
             m_intersectionOfTree = Intersection(m_intersectionOfTwo.begin(), m_intersectionOfTwo.end(), m_v1.begin(), m_v1.end());
         }
     }
+
     std::vector<int> IntersectArray::GetIntersectionOfTwoArray() {
         return m_intersectionOfTwo;
     }
+
     std::vector<int> IntersectArray::GetIntersectionOfTreeArray() {
         return m_intersectionOfTree;
     }
+
     void IntersectArray::PrintIntersectionOfTwoArray() {
         std::cout << "IntersectionOfTwoArray: ";
         outputContainer(m_intersectionOfTwo);
     }
+
     void IntersectArray::PrintIntersectionOfTreeArray() {
         std::cout << "IntersectionOfTreeArray: ";
         outputContainer(m_intersectionOfTree);

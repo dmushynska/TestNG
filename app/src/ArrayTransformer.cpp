@@ -1,7 +1,8 @@
 #include "ArrayTransformer.h"
 #include <fstream>
-#include <regex>
+#include <sstream>
 
+// creates vector from string, works only with int and spaces(' ', ',')
     void stringToVector(const std::string &str, std::vector<int> &vector) {
         std::stringstream ss(str);
         int numb = 0;
@@ -13,6 +14,7 @@
         }
     }
 
+// loads file and fills vectors
     ArrayTransformer::ArrayTransformer(const std::string &filename) {
         std::string line;
         std::ifstream file(filename);
